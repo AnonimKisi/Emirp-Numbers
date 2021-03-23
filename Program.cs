@@ -1,31 +1,33 @@
 ﻿//Made by AnonimKisi
+//Add the neccessary libraries
 using System;
 
 namespace ConsoleApp1
 {
     class Program
     {
+        //declare the number
         static int number = 13;
-
+//the functions needed to reverse the 'number'
         public static int Reverse(int reverse)
         {
-            int fuck = number;
+            int temp_number = number; //Don't touch the actual number
             reverse = 0;
-            damn:
-            if (fuck > 0)
+            Goto_Point:
+            if (temp_number > 0)
             {
-                int reverse_flag = fuck % 10;
+                int reverse_flag = temp_number % 10;
                 reverse = (reverse * 10) + reverse_flag;
-                fuck = fuck / 10;
-                goto damn;
+                temp_number = temp_number / 10;
+                goto Goto_Point;
             }
             return reverse;
         }
 
         static void Main()
         {
-            Console.Title = "Made by ANonimKisi";
-
+            Console.Title = "Made by AnonimKisi";
+//Declare the neccessary variables
               int  half = number / 2, i, flag = 0;
 
                 Console.WriteLine("-------------------------------");           
@@ -35,11 +37,12 @@ namespace ConsoleApp1
 
                 int X = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine();
-
+//if 'X' is smaller than 100 or bigger than 1000, return to main()
                 if (X < 100 || X > 1000)
                 {
                     Main();
                 }
+            //if not...
                 else
                 {
                     while (number < X)
